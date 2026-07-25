@@ -58,7 +58,7 @@ A single misread prescription can result in hospitalization or worse.
          ▼
 ┌─────────────────────────────┐
 │   Hugging Face Inference    │
-│        API (Gemma 3 4B)     │
+│        API (Gemma 4)     │
 │   Multimodal Vision + NLP   │
 └────────┬────────────────────┘
          │
@@ -103,7 +103,7 @@ A single misread prescription can result in hospitalization or worse.
 
 | Layer | Technology | Purpose |
 |-------|------------|---------|
-| AI Model | `unsloth/gemma-3-4b-it` | Multimodal vision & text understanding |
+| AI Model | `unsloth/gemma-4-it` | Multimodal vision & text understanding |
 | Quantization | `bitsandbytes` 4-bit | Fits model inside Kaggle GPU limits |
 | API Layer | Hugging Face Inference API | Zero-GPU deployment on Streamlit |
 | Frontend | Streamlit | Interactive web UI |
@@ -168,15 +168,15 @@ The notebook includes:
 
 ## 📝 Note on Gemma 4
 
-Due to **Kaggle GPU storage constraints** (15.5 GB VRAM limit) during the 24-hour hackathon window, we optimized our prototype using **Gemma 3 4B** with 4-bit quantization (~3 GB VRAM). 
+Due to **Kaggle GPU storage constraints** (15.5 GB VRAM limit) during the 24-hour hackathon window, we optimized our prototype using **Gemma 4** with 4-bit quantization (~12 GB VRAM). 
 
 Our architecture is intentionally designed for a **seamless one-line upgrade** to Gemma 4:
 ```python
 # Current
-MODEL_ID = "unsloth/gemma-3-4b-it"
+MODEL_ID = "unsloth/gemma-4-it"
 
 # Future upgrade
-MODEL_ID = "google/gemma-4-4b-it"  # or applicable Gemma 4 variant
+MODEL_ID = "google/gemma-4-it"  # or applicable Gemma 4 variant
 ```
 
 ---
